@@ -19,6 +19,7 @@
 		37AEC7692497338A0080DD23 /* MyWealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AEC7682497338A0080DD23 /* MyWealthViewController.swift */; };
 		37AEC76C2498690A0080DD23 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37AEC76E2498690A0080DD23 /* Localizable.strings */; };
 		37C9C63D24909FD700ECBA48 /* FakeClientApiForLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C9C63C24909FD700ECBA48 /* FakeClientApiForLoginTests.swift */; };
+		37D6746824987F6A0045CA97 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D6746724987F6A0045CA97 /* LocalStore.swift */; };
 		37F8C0A9248F95B7004AEA4D /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8C0A8248F95B7004AEA4D /* APIClientProtocol.swift */; };
 		37F8C0AC248F967D004AEA4D /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8C0AB248F967D004AEA4D /* LoginApi.swift */; };
 		37F8C0AE24907113004AEA4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F8C0AD24907113004AEA4D /* User.swift */; };
@@ -60,6 +61,7 @@
 		37AEC76F249869100080DD23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37C9C63B2490944700ECBA48 /* RxAlamoDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxAlamoDemo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		37C9C63C24909FD700ECBA48 /* FakeClientApiForLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeClientApiForLoginTests.swift; sourceTree = "<group>"; };
+		37D6746724987F6A0045CA97 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		37F668972490DC4500A1C4DF /* RxAlamo+Coder.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxAlamo+Coder.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		37F8C0A8248F95B7004AEA4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		37F8C0AB248F967D004AEA4D /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
@@ -140,13 +142,14 @@
 				379A23F6248E154C00A8ECFA /* LaunchScreen.storyboard */,
 				379A23EB248E154B00A8ECFA /* AppDelegate.swift */,
 				379A23ED248E154B00A8ECFA /* SceneDelegate.swift */,
+				37AEC76E2498690A0080DD23 /* Localizable.strings */,
+				37D6746724987F6A0045CA97 /* LocalStore.swift */,
+				37AEC7682497338A0080DD23 /* MyWealthViewController.swift */,
 				37C9C63F2490A22E00ECBA48 /* Api */,
 				37C9C6402490A24100ECBA48 /* Features */,
 				379A23F4248E154C00A8ECFA /* Assets.xcassets */,
 				379A23F9248E154C00A8ECFA /* Info.plist */,
 				37F8C0AD24907113004AEA4D /* User.swift */,
-				37AEC7682497338A0080DD23 /* MyWealthViewController.swift */,
-				37AEC76E2498690A0080DD23 /* Localizable.strings */,
 			);
 			path = RxCode;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				379A23F0248E154B00A8ECFA /* LoginViewController.swift in Sources */,
 				379A23EC248E154B00A8ECFA /* AppDelegate.swift in Sources */,
 				379A23EE248E154B00A8ECFA /* SceneDelegate.swift in Sources */,
+				37D6746824987F6A0045CA97 /* LocalStore.swift in Sources */,
 				37F8C0B024907512004AEA4D /* ApiClient.swift in Sources */,
 				37F8C0A9248F95B7004AEA4D /* APIClientProtocol.swift in Sources */,
 				37F8C0AC248F967D004AEA4D /* LoginApi.swift in Sources */,

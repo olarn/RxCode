@@ -9,10 +9,16 @@
 import UIKit
 import Localize_Swift
 
+///
+/// UIViewController super class for all MyWealth app
+/// to handle language toggle.
+///
+/// "setText()" method need to be override in syb-class.
 class MyWealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentLanguage()
         self.setText()
     }
 
@@ -31,12 +37,20 @@ class MyWealthViewController: UIViewController {
     }
     
     func toggleLanguage() {
-        var lang = Localize.currentLanguage()
-        lang = lang == "en" ? "th" : "en"
-        Localize.setCurrentLanguage(lang)
+        let localStore = LocalStore()
+        let newLang = localStore.lang == "en" ? "th" : "en"
+        Localize.setCurrentLanguage(newLang)
+        localStore.lang = newLang
+    }
+    
+    func applyCurrentLanguage() {
+        let localStore = LocalStore()
+        Localize.setCurrentLanguage(localStore.lang)
     }
     
     @objc func setText() {
         assert(false, "Please override this method in MyWealthViewController sub-class to handle language changed.")
     }
 }
+
+
