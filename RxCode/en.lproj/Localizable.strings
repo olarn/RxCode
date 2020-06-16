@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  RxCode
+
+  Created by Olarn U. on 16/6/2563 BE.
+  Copyright © 2563 Olarn Ungumnuayporn. All rights reserved.
+*/
+
+"en" = "EN";
+"Login" = "Login";
+"Hello" = "Hello";
+"Invalid username and/or password" = "Invalid username and/or password";
+"OK" = "OK";
