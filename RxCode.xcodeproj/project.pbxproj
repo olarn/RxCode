@@ -116,6 +116,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3743E5FC249B6320006E5AAD /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				37AEC7682497338A0080DD23 /* MyWealthViewController.swift */,
+				37AEC76E2498690A0080DD23 /* Localizable.strings */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		3743E5FD249B6381006E5AAD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				379A23F6248E154C00A8ECFA /* LaunchScreen.storyboard */,
+				379A23EB248E154B00A8ECFA /* AppDelegate.swift */,
+				379A23ED248E154B00A8ECFA /* SceneDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		3743E5FE249B63B8006E5AAD /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				37D6746724987F6A0045CA97 /* LocalStore.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		379A23DF248E154B00A8ECFA = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +166,10 @@
 		379A23EA248E154B00A8ECFA /* RxCode */ = {
 			isa = PBXGroup;
 			children = (
-				37C9C63A2490940E00ECBA48 /* Playground */,
-				379A23F6248E154C00A8ECFA /* LaunchScreen.storyboard */,
-				379A23EB248E154B00A8ECFA /* AppDelegate.swift */,
-				379A23ED248E154B00A8ECFA /* SceneDelegate.swift */,
-				37AEC7682497338A0080DD23 /* MyWealthViewController.swift */,
-				37AEC76E2498690A0080DD23 /* Localizable.strings */,
-				37D6746724987F6A0045CA97 /* LocalStore.swift */,
+				37C9C63A2490940E00ECBA48 /* Playgrounds */,
+				3743E5FD249B6381006E5AAD /* Main */,
+				3743E5FE249B63B8006E5AAD /* Share */,
+				3743E5FC249B6320006E5AAD /* Locale */,
 				37C9C63F2490A22E00ECBA48 /* Api */,
 				37C9C6402490A24100ECBA48 /* Features */,
 				379A23F4248E154C00A8ECFA /* Assets.xcassets */,
@@ -164,7 +188,7 @@
 			path = RxCodeTests;
 			sourceTree = "<group>";
 		};
-		37C9C63A2490940E00ECBA48 /* Playground */ = {
+		37C9C63A2490940E00ECBA48 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
 				3743E5FB2499E222006E5AAD /* SubString.playground */,
@@ -173,7 +197,7 @@
 				37F8C0B124907984004AEA4D /* Decoder.playground */,
 				37416D47248E168E000FCF40 /* RxPlayground.playground */,
 			);
-			path = Playground;
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 		37C9C63E2490A01F00ECBA48 /* LoginTests */ = {
