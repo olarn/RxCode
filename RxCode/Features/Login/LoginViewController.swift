@@ -23,17 +23,14 @@ class LoginViewController: MyWealthViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter = LoginViewPresenter(api: LoginApi(apiClient: ApiClient()))
+
+		presenter = LoginViewPresenter(api: LoginApi(apiClient: ApiClient()))
+		
         bindingUI(to: presenter)
         handleValidation(from: presenter)
+		handleOnLocaleChange()
     }
-    
-    @objc override func setText() {
-        changeLanguageButton.setTitle("en".localized(), for: .normal)
-        buttonLogin.setTitle("Login".localized(), for: .normal)
-    }
-
+	
     @IBAction func buttonChangeLangTapped(_ sender: Any) {
         self.toggleLanguage()
     }
@@ -73,11 +70,19 @@ extension LoginViewController {
         presenter
             .outputUIValidator
             .subscribe(onNext: { [weak self] result in
-                if let self = self {
-                    self.setButtonState(to: result)
-                }})
+				self?.setButtonState(to: result)
+			})
             .disposed(by: bag)
     }
+	
+	private func handleOnLocaleChange() {
+		self.onLocaleChanged
+			.subscribe(onNext: { [weak self] _ in
+				self?.changeLanguageButton.setTitle("en".localized(), for: .normal)
+				self?.buttonLogin.setTitle("Login".localized(), for: .normal)
+			})
+			.disposed(by: bag)
+	}
 }
 
 // MARK: - Set Button State

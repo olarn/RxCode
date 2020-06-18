@@ -8,25 +8,31 @@
 
 import UIKit
 import Localize_Swift
+import RxSwift
 
 ///
 /// UIViewController super class for all MyWealth app
 /// to handle language toggle.
 ///
-/// "setText()" method need to be override in syb-class.
+/// you can override func - applyLocaleChangeToUI() - to cahnge language,
+/// or use RxSwift to subscribe onChanged to acccept notify when locale changed.
 class MyWealthViewController: UIViewController {
+	
+	var onLocaleChanged = BehaviorSubject<String>(value: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         applyCurrentLanguage()
-        self.setText()
+        self.applyLocaleChangeToUI()
     }
 
+// MARK:- notification center lifecycle
+	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(setText),
+            selector: #selector(applyLocaleChangeToUI),
             name: NSNotification.Name(LCLLanguageChangeNotification),
             object: nil)
     }
@@ -36,6 +42,8 @@ class MyWealthViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+// MARK:- Change Locale
+	
     func toggleLanguage() {
         let localStore = LocalStore()
         let newLang = localStore.lang == "en" ? "th" : "en"
@@ -43,14 +51,16 @@ class MyWealthViewController: UIViewController {
         localStore.lang = newLang
     }
     
-    func applyCurrentLanguage() {
+    private func applyCurrentLanguage() {
         let localStore = LocalStore()
         Localize.setCurrentLanguage(localStore.lang)
     }
+	
+//MARK:- emit localed changed to subclass
     
-    @objc func setText() {
-        assert(false, "Please override this method in MyWealthViewController sub-class to handle language changed.")
-    }
+    @objc private func applyLocaleChangeToUI() {
+		onLocaleChanged.onNext(Localize.currentLanguage())
+	}
 }
 
 
