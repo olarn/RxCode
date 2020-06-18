@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37416D49248E3297000FCF40 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37416D48248E3297000FCF40 /* LoginViewPresenter.swift */; };
+		3743E606249B6F00006E5AAD /* RxCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3743E605249B6F00006E5AAD /* RxCodeUITests.swift */; };
 		379A23EC248E154B00A8ECFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A23EB248E154B00A8ECFA /* AppDelegate.swift */; };
 		379A23EE248E154B00A8ECFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A23ED248E154B00A8ECFA /* SceneDelegate.swift */; };
 		379A23F0248E154B00A8ECFA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A23EF248E154B00A8ECFA /* LoginViewController.swift */; };
@@ -30,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3743E608249B6F00006E5AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 379A23E0248E154B00A8ECFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 379A23E7248E154B00A8ECFA;
+			remoteInfo = RxCode;
+		};
 		379A23FF248E154C00A8ECFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 379A23E0248E154B00A8ECFA /* Project object */;
@@ -45,6 +53,9 @@
 		37416D47248E168E000FCF40 /* RxPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		37416D48248E3297000FCF40 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		3743E5FB2499E222006E5AAD /* SubString.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SubString.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3743E603249B6F00006E5AAD /* RxCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3743E605249B6F00006E5AAD /* RxCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCodeUITests.swift; sourceTree = "<group>"; };
+		3743E607249B6F00006E5AAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379A23E8248E154B00A8ECFA /* RxCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379A23EB248E154B00A8ECFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379A23ED248E154B00A8ECFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3743E600249B6F00006E5AAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379A23E5248E154B00A8ECFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,11 +161,21 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		3743E604249B6F00006E5AAD /* RxCodeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3743E605249B6F00006E5AAD /* RxCodeUITests.swift */,
+				3743E607249B6F00006E5AAD /* Info.plist */,
+			);
+			path = RxCodeUITests;
+			sourceTree = "<group>";
+		};
 		379A23DF248E154B00A8ECFA = {
 			isa = PBXGroup;
 			children = (
 				379A23EA248E154B00A8ECFA /* RxCode */,
 				379A2401248E154C00A8ECFA /* RxCodeTests */,
+				3743E604249B6F00006E5AAD /* RxCodeUITests */,
 				379A23E9248E154B00A8ECFA /* Products */,
 				019273CA419F03C27A2AB443 /* Pods */,
 				36B1399446B1049AAC464303 /* Frameworks */,
@@ -159,6 +187,7 @@
 			children = (
 				379A23E8248E154B00A8ECFA /* RxCode.app */,
 				379A23FE248E154C00A8ECFA /* RxCodeTests.xctest */,
+				3743E603249B6F00006E5AAD /* RxCodeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +271,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3743E602249B6F00006E5AAD /* RxCodeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3743E60A249B6F00006E5AAD /* Build configuration list for PBXNativeTarget "RxCodeUITests" */;
+			buildPhases = (
+				3743E5FF249B6F00006E5AAD /* Sources */,
+				3743E600249B6F00006E5AAD /* Frameworks */,
+				3743E601249B6F00006E5AAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3743E609249B6F00006E5AAD /* PBXTargetDependency */,
+			);
+			name = RxCodeUITests;
+			productName = RxCodeUITests;
+			productReference = 3743E603249B6F00006E5AAD /* RxCodeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		379A23E7248E154B00A8ECFA /* RxCode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379A2407248E154C00A8ECFA /* Build configuration list for PBXNativeTarget "RxCode" */;
@@ -291,6 +338,10 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Olarn Ungumnuayporn";
 				TargetAttributes = {
+					3743E602249B6F00006E5AAD = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 379A23E7248E154B00A8ECFA;
+					};
 					379A23E7248E154B00A8ECFA = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -316,11 +367,19 @@
 			targets = (
 				379A23E7248E154B00A8ECFA /* RxCode */,
 				379A23FD248E154C00A8ECFA /* RxCodeTests */,
+				3743E602249B6F00006E5AAD /* RxCodeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3743E601249B6F00006E5AAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379A23E6248E154B00A8ECFA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +482,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3743E5FF249B6F00006E5AAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3743E606249B6F00006E5AAD /* RxCodeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379A23E4248E154B00A8ECFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,6 +521,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3743E609249B6F00006E5AAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 379A23E7248E154B00A8ECFA /* RxCode */;
+			targetProxy = 3743E608249B6F00006E5AAD /* PBXContainerItemProxy */;
+		};
 		379A2400248E154C00A8ECFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 379A23E7248E154B00A8ECFA /* RxCode */;
@@ -490,6 +562,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3743E60B249B6F00006E5AAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RxCodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.mywealth.RxCodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RxCode;
+			};
+			name = Debug;
+		};
+		3743E60C249B6F00006E5AAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RxCodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.mywealth.RxCodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RxCode;
+			};
+			name = Release;
+		};
 		379A2405248E154C00A8ECFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -695,6 +803,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3743E60A249B6F00006E5AAD /* Build configuration list for PBXNativeTarget "RxCodeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3743E60B249B6F00006E5AAD /* Debug */,
+				3743E60C249B6F00006E5AAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		379A23E3248E154B00A8ECFA /* Build configuration list for PBXProject "RxCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
