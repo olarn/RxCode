@@ -22,28 +22,28 @@ class RxAlamoTests: XCTestCase {
 	
 	let bag = DisposeBag()
 	
-	func testCallPostApi() throws {
-		
-		let body = try! JSONEncoder().encode(Account(
-			idType: "I",
-			idValue: "3100202497392"
-		))
-		
-		let apiRequest = ApiRequest(
-			url: "https://api.c1-alpha-tiscogroup.com/public/wmb-port-v1-service/wmb-port/accounts/inquiry",
-			method: .post,
-			header: nil,
-			body: body)
-		
-		let response = try! ApiClient()
-			.request(apiRequest)
-			
-		let result = try! response
-			.toBlocking()
-			.first()
-		
-		XCTAssert(result != nil)
-	}
+//	func testCallPostApi() throws {
+//
+//		let body = try! JSONEncoder().encode(Account(
+//			idType: "I",
+//			idValue: "3100202497392"
+//		))
+//
+//		let apiRequest = ApiRequest(
+//			url: "https://api.c1-alpha-tiscogroup.com/public/wmb-port-v1-service/wmb-port/accounts/inquiry",
+//			method: .post,
+//			header: nil,
+//			body: body)
+//
+//		let response = try! ApiClient()
+//			.request(apiRequest)
+//
+//		let result = try! response
+//			.toBlocking()
+//			.first()
+//
+//		XCTAssert(result != nil)
+//	}
 	
 	func testCallWithInvalidApiRequestExpectThrowException() throws {
 		let request = ApiRequest(
