@@ -17,16 +17,17 @@ import RxBlocking
 //
 
 class FakeApiClient: ApiClientProtocol {
+	
+	var jsonResponseString =
+	"""
+		{
+		  "userName" : "1234",
+		  "firstName" : "John",
+		  "lastName" : "Wick"
+		}
+	"""
 
 	func request(_ request: ApiRequest) throws -> Observable<Data> {
-		let jsonResponseString =
-		"""
-            {
-              "userName" : "1234",
-              "firstName" : "John",
-              "lastName" : "Wick"
-            }
-        """
 		let data = jsonResponseString.data(using: .utf8)!
 		return Observable.just(data)
 	}
