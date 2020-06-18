@@ -36,7 +36,6 @@ class RxCodeUITests: XCTestCase {
 		passwordTextField.typeText("1234")
 		
 		app.buttons["loginButton"].tap()
-		app.alerts["Info."].scrollViews.otherElements.buttons["รับทราบ"].tap()
     }
 	
 	/// ```
