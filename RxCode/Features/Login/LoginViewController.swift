@@ -11,25 +11,30 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: MyWealthViewController {
+	
+    var presenter: LoginViewPresenter!
+    let bag = DisposeBag()
+    
+	// MARK: - Outlets
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var changeLanguageButton: UIButton!
-    
-    var presenter: LoginViewPresenter!
-    
-    let bag = DisposeBag()
-    
+	@IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		presenter = LoginViewPresenter(api: LoginApi(apiClient: ApiClient()))
 		
         bindingUI(to: presenter)
-        handleValidation(from: presenter)
+        handleButtonLoginState(from: presenter)
+		handleOnValidating(from: presenter)
 		handleOnLocaleChange()
     }
+	
+	// MARK: - Actions
 	
     @IBAction func buttonChangeLangTapped(_ sender: Any) {
         self.toggleLanguage()
@@ -44,12 +49,9 @@ class LoginViewController: MyWealthViewController {
                 self?.showAlert(success: result)
             }).disposed(by: bag)
     }
-}
 
-// MARK: - bindingUItoRx
-
-extension LoginViewController {
-    
+	// MARK: - bindingUItoRx.inputs
+ 
     private func bindingUI(to presenter: LoginViewPresenter) {
         loginTextField
             .rx
@@ -65,15 +67,26 @@ extension LoginViewController {
             .bind(to: presenter.inputPassword)
             .disposed(by: bag)
     }
+	
+	// MARK: - handle presenter.outputs
     
-    private func handleValidation(from presenter: LoginViewPresenter) {
-        presenter
-            .outputUIValidator
+    private func handleButtonLoginState(from presenter: LoginViewPresenter) {
+		presenter
+            .outputCanDoLogin
             .subscribe(onNext: { [weak self] result in
 				self?.setButtonState(to: result)
 			})
             .disposed(by: bag)
+	}
+	
+	private func handleOnValidating(from presenter: LoginViewPresenter) {
+		presenter
+			.outputIsValidating
+			.bind(to: loadingIndicator.rx.isAnimating)
+			.disposed(by: bag)
     }
+	
+	// MARK: - Locale
 	
 	private func handleOnLocaleChange() {
 		self.onLocaleChanged
@@ -83,12 +96,9 @@ extension LoginViewController {
 			})
 			.disposed(by: bag)
 	}
-}
 
-// MARK: - Set Button State
+	// MARK: - Private Methods
 
-extension LoginViewController {
-    
     private func setButtonState(to state: Bool) {
         self.buttonLogin.isEnabled = state
         self.buttonLogin.backgroundColor = state ? .blue : .gray

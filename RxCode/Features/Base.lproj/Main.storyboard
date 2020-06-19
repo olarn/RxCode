@@ -22,7 +22,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-5n-Inw">
-                                <rect key="frame" x="143.5" y="317" width="128" height="41"/>
+                                <rect key="frame" x="143.5" y="349" width="128" height="41"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
                                 <constraints>
@@ -50,16 +50,25 @@
                                     <action selector="buttonChangeLangTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ipK-K7-fhB"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="973-Ax-8Q8">
+                                <rect key="frame" x="197" y="298" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="0Uy-7C-Y6E"/>
+                                    <constraint firstAttribute="width" constant="20" id="ho8-u4-hnT"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="TAH-5n-Inw" firstAttribute="top" secondItem="mV2-uO-dre" secondAttribute="bottom" constant="54" id="BUd-GR-AJM"/>
+                            <constraint firstItem="TAH-5n-Inw" firstAttribute="top" secondItem="mV2-uO-dre" secondAttribute="bottom" constant="86" id="BUd-GR-AJM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mdl-Sy-ezF" secondAttribute="trailing" constant="39" id="DmP-Ka-Jsw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rJy-I5-ThG" secondAttribute="trailing" constant="39" id="Iim-lc-9Jc"/>
+                            <constraint firstItem="973-Ax-8Q8" firstAttribute="top" secondItem="mV2-uO-dre" secondAttribute="bottom" constant="35" id="Rhz-WI-0pf"/>
                             <constraint firstItem="rJy-I5-ThG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="Uta-NI-RzF"/>
                             <constraint firstItem="rJy-I5-ThG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="XFT-wy-nRo"/>
                             <constraint firstItem="TAH-5n-Inw" firstAttribute="centerX" secondItem="mV2-uO-dre" secondAttribute="centerX" id="YnQ-PI-JQb"/>
                             <constraint firstItem="rJy-I5-ThG" firstAttribute="width" secondItem="mV2-uO-dre" secondAttribute="width" id="fsf-bE-qCQ"/>
+                            <constraint firstItem="973-Ax-8Q8" firstAttribute="centerX" secondItem="mV2-uO-dre" secondAttribute="centerX" id="gqf-yu-cJq"/>
                             <constraint firstItem="Mdl-Sy-ezF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="guf-uI-gad"/>
                             <constraint firstItem="mV2-uO-dre" firstAttribute="top" secondItem="rJy-I5-ThG" secondAttribute="bottom" constant="28" id="kui-N0-Dd8"/>
                             <constraint firstItem="rJy-I5-ThG" firstAttribute="centerX" secondItem="mV2-uO-dre" secondAttribute="centerX" id="rKO-rm-DRR"/>
@@ -69,6 +78,7 @@
                     <connections>
                         <outlet property="buttonLogin" destination="TAH-5n-Inw" id="5US-KK-AEQ"/>
                         <outlet property="changeLanguageButton" destination="Mdl-Sy-ezF" id="3Wn-92-NTV"/>
+                        <outlet property="loadingIndicator" destination="973-Ax-8Q8" id="Kez-0t-ntA"/>
                         <outlet property="loginTextField" destination="rJy-I5-ThG" id="4YF-Eg-mK7"/>
                         <outlet property="passwordTextField" destination="mV2-uO-dre" id="YWx-fq-R36"/>
                     </connections>

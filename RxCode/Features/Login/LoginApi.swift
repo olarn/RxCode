@@ -18,7 +18,7 @@ class LoginApi {
 		self.apiClient = apiClient
 	}
 	
-	func validate(userName: String, password: String) -> Observable<Bool> {
+	func validate(_ userName: String, and password: String) -> Observable<Bool> {
 
 		let request = ApiRequest(
 			url: "https://extendsclass.com/api/json-storage/bin/ffddddb",

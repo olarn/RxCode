@@ -27,7 +27,7 @@ class RxCodeLoginTests: XCTestCase {
 		presenter.inputPassword.onNext("1234")
 		
 		let expectedResult = try! presenter
-			.outputUIValidator
+			.outputCanDoLogin
 			.asObservable()
 			.toBlocking()
 			.first()!
@@ -40,7 +40,7 @@ class RxCodeLoginTests: XCTestCase {
 		presenter.inputPassword.onNext("1")
 		
 		let expectedResult = try! presenter
-			.outputUIValidator
+			.outputCanDoLogin
 			.asObservable()
 			.toBlocking()
 			.first()!
