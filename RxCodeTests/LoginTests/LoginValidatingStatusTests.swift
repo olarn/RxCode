@@ -15,7 +15,6 @@ import RxBlocking
 class LoginValidatingStatusTests: XCTestCase {
 
 	let bag = DisposeBag()
-	let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 	
     func testIsValidatingDefaultStateShouldReturnTrue() throws {
 		let loginPresenter = LoginViewPresenter(api: LoginApi(apiClient: FakeApiClient()))
