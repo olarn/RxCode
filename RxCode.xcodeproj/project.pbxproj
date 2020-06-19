@@ -281,7 +281,6 @@
 				3743E5FF249B6F00006E5AAD /* Sources */,
 				3743E600249B6F00006E5AAD /* Frameworks */,
 				3743E601249B6F00006E5AAD /* Resources */,
-				37FCF2EC249CA8B300E9CFCA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +301,7 @@
 				379A23E5248E154B00A8ECFA /* Frameworks */,
 				379A23E6248E154B00A8ECFA /* Resources */,
 				84C54C9A1413759AF6199E50 /* [CP] Embed Pods Frameworks */,
+				37FD68C1249CC7E800C9C72D /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -422,7 +422,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxCodeTests/Pods-RxCodeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		37FCF2EC249CA8B300E9CFCA /* ShellScript */ = {
+		37FD68C1249CC7E800C9C72D /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,13 +431,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Run SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n   \"${PODS_ROOT}/SwiftLint/swiftlint\"\nselse\n   echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n   swiftlint\nelse\n   echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		447B6CE1EC35E23BB96936E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
