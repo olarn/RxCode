@@ -10,39 +10,39 @@ import Foundation
 import RxSwift
 
 class LoginViewPresenter {
-	
+
 	let bag = DisposeBag()
 	var loginApi: LoginApi
 
 	let inputLogin = BehaviorSubject<String>(value: "")
 	let inputPassword = BehaviorSubject<String>(value: "")
 	let outputCanDoLogin: Observable<Bool>!
-	
+
 	private let validatingStatus = BehaviorSubject<Bool>(value: false)
 	var outputIsValidating: Observable<Bool> {
 		return validatingStatus.asObserver()
 	}
-	
+
 	init(api: LoginApi) {
 		self.loginApi = api
-		
+
 		let loginValidation = inputLogin.map { value -> Bool in
 			return value.count >= 4
 		}
-		
+
 		let passwordValidation = inputPassword.map { value -> Bool in
 			return value.count >= 4
 		}
-		
+
 		outputCanDoLogin = Observable
 			.combineLatest(
 				loginValidation.asObservable(),
 				passwordValidation.asObservable())
-			.map { a, b -> Bool in
-				return a && b
+			.map { loginIsValid, passwordIsValid -> Bool in
+				return loginIsValid && passwordIsValid
 		}
 	}
-	
+
 	func validate(_ userName: String, and password: String) -> Observable<Bool> {
 		validatingStatus.onNext(true)
 
@@ -57,6 +57,6 @@ class LoginViewPresenter {
 				.disposed(by: self.bag)
 			return Disposables.create()
 		}
-		
+
 	}
 }

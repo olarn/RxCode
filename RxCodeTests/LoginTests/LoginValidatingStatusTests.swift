@@ -15,11 +15,18 @@ import RxBlocking
 class LoginValidatingStatusTests: XCTestCase {
 
 	let bag = DisposeBag()
-	
+
     func testIsValidatingDefaultStateShouldReturnTrue() throws {
 		let loginPresenter = LoginViewPresenter(api: LoginApi(apiClient: FakeApiClient()))
-		let defaultState = try! loginPresenter.outputIsValidating.asObservable().toBlocking().first()!
-		XCTAssertFalse(defaultState)
+		do {
+			guard let defaultState = try loginPresenter.outputIsValidating.asObservable().toBlocking().first() else {
+				XCTFail(#function)
+				return
+			}
+			XCTAssertFalse(defaultState)
+		} catch {
+			XCTFail(#function)
+		}
 	}
 
     func testIsValidatingWhenPerformLogin_ItShouldBeFalseThenTrue() throws {
@@ -37,15 +44,15 @@ class LoginValidatingStatusTests: XCTestCase {
 
 		// Assert
 		loginPresenter.validate("", and: "")
-			.subscribe(onNext: { result in
+			.subscribe(onNext: { _ in
 				XCTAssertEqual(expectedStates, actualResultsStates)
 				exp.fulfill()
 			}).disposed(by: bag)
 
 		// Blocking
 		waitForExpectations(timeout: 0.5) { error in
-			if let e = error {
-				XCTFail(e.localizedDescription)
+			if let err = error {
+				XCTFail(err.localizedDescription)
 			}
 		}
 	}

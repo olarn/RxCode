@@ -9,7 +9,7 @@
 import XCTest
 
 class RxCodeUITests: XCTestCase {
-	
+
 	var app: XCUIApplication!
 
     override func setUpWithError() throws {
@@ -30,21 +30,21 @@ class RxCodeUITests: XCTestCase {
 		let logintextTextField = app.textFields["loginText"]
 		logintextTextField.tap()
 		logintextTextField.typeText("1234")
-		
+
 		let passwordTextField = app.textFields["passwordText"]
 		passwordTextField.tap()
 		passwordTextField.typeText("1234")
-		
+
 		app.buttons["loginButton"].tap()
     }
-	
+
 	/// ```
 	/// UI Test Example with keyboard tap
 	func testLoginFail() throws {
 		registerDismissAlert()
 
 		app.textFields["loginText"].tap()
-		
+
 		let moreKey = app.keys["more"]
 
 		moreKey.tap()

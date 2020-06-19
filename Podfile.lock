@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.2.1)
   - Localize-Swift (3.1.0)
   - RxAlamofire (5.3.2):
     - RxAlamofire/Core (= 5.3.2)
@@ -16,6 +16,7 @@ PODS:
   - RxSwift (5.1.1)
   - RxTest (5.1.1):
     - RxSwift (~> 5)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Localize-Swift
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - RxTest
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -35,9 +37,10 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxTest
+    - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   RxAlamofire: 9234f30d94bfae9889c2aaba36358312083a7ad3
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: d2b0aca2baee504936abfdf7b78f64ee46ff14d3
+PODFILE CHECKSUM: 40a5d070f7f726a985225ed49e477c4de1138695
 
 COCOAPODS: 1.9.3

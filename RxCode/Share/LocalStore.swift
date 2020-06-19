@@ -14,11 +14,11 @@ protocol LocalStoreLangProtocol {
 }
 
 class LocalStore {
-    
+
     enum Keys: String {
         case lang = "RxLang"
     }
-    
+
     var lang: String {
         get {
             return UserDefaults.standard.string(forKey: Keys.lang.rawValue) ?? "en"

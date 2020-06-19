@@ -1,7 +1,6 @@
-/// ``` tutorial https://www.hackingwithswift.com/example-code/language/how-to-convert-json-into-swift-objects-using-codable
-
 import Foundation
 
+/// ``` tutorial https://www.hackingwithswift.com/example-code/language/how-to-convert-json-into-swift-objects-using-codable
 let jsonString = """
 [
     {

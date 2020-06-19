@@ -25,8 +25,8 @@ let bag = DisposeBag()
 //}).disposed(by: bag)
 //
 
-func returnObservable(i: Int) -> Observable<String> {
-	return BehaviorSubject<Int>(value: i)
+func returnObservable(intNumber: Int) -> Observable<String> {
+	return BehaviorSubject<Int>(value: intNumber)
 		.filter({ input -> Bool in
 			return input % 2 == 0
 		})
@@ -35,6 +35,6 @@ func returnObservable(i: Int) -> Observable<String> {
 		})
 }
 
-returnObservable(i: 2).subscribe(onNext: { (v) in
-	print(v)
+returnObservable(i: 2).subscribe(onNext: { (value) in
+	print(value)
 })

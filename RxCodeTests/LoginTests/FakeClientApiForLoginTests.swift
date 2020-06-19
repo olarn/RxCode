@@ -17,7 +17,7 @@ import RxBlocking
 //
 
 class FakeApiClient: ApiClientProtocol {
-	
+
 	var jsonResponseString =
 	"""
 		{

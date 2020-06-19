@@ -9,6 +9,7 @@ target 'RxCode' do
   pod 'RxCocoa'
   pod 'RxAlamofire'
   pod 'Localize-Swift'
+  pod 'SwiftLint'
 
   target 'RxCodeTests' do
     inherit! :search_paths

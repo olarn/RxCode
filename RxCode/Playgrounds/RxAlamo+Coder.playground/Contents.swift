@@ -18,21 +18,20 @@ let bag = DisposeBag()
 func clientRequest<TypeOfBody: Encodable>(
 	urlString: String,
 	method: String = "GET",
-	bodyObject: TypeOfBody) // -> Observable<(HTTPURLResponse, Data)>
-{
+	bodyObject: TypeOfBody) {
 	var request = URLRequest(url: URL(string: urlString)!)
 	request.httpMethod = method
 	request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-	request.httpBody = try! JSONEncoder().encode(bodyObject)
-	
-	//	return RxAlamofire
-	//		.request(request as URLRequestConvertible)
-	//		.responseData()
-	
+	do {
+		request.httpBody = try JSONEncoder().encode(bodyObject)
+	} catch {
+		print("Convert Error")
+	}
+
 	RxAlamofire
 		.request(request as URLRequestConvertible)
 		.responseData()
-		.subscribe(onNext: { (res, data) in
+		.subscribe(onNext: { (_, data) in
 			print(data)
 		}).disposed(by: bag)
 }
@@ -42,14 +41,3 @@ let accountRequest = Account(
 	idType: "I",
 	idValue: "3100202497392"
 )
-
-clientRequest(urlString: urlString, method: "POST", bodyObject: accountRequest)
-//	.subscribe(onNext: { (response, data) in
-//		print(data)
-//	}, onError: { (error) in
-//		print("Error -> \(error.localizedDescription)")
-//	}, onCompleted: {
-//		print("Completed")
-//	})
-
-

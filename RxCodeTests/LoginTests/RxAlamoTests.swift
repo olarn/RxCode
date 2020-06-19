@@ -19,9 +19,9 @@ struct Account: Codable {
 }
 
 class RxAlamoTests: XCTestCase {
-	
+
 	let bag = DisposeBag()
-	
+
 //	func testCallPostApi() throws {
 //
 //		let body = try! JSONEncoder().encode(Account(
@@ -44,7 +44,7 @@ class RxAlamoTests: XCTestCase {
 //
 //		XCTAssert(result != nil)
 //	}
-	
+
 	func testCallWithInvalidApiRequestExpectThrowException() throws {
 		let request = ApiRequest(
 			url: "",
@@ -57,5 +57,5 @@ class RxAlamoTests: XCTestCase {
 			XCTAssertTrue(true)
 		}
 	}
-	
+
 }
