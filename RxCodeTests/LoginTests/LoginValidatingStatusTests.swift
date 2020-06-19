@@ -15,6 +15,7 @@ import RxBlocking
 class LoginValidatingStatusTests: XCTestCase {
 
 	let bag = DisposeBag()
+	let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 	
     func testIsValidatingDefaultStateShouldReturnTrue() throws {
 		let loginPresenter = LoginViewPresenter(api: LoginApi(apiClient: FakeApiClient()))
@@ -26,6 +27,7 @@ class LoginValidatingStatusTests: XCTestCase {
 
 		// Arrange
 		let exp = expectation(description: "")
+		let expectedStates = [false, true, false] // default = false, true when perform, false when finish
 		var actualResultsStates = [Bool]()
 		let loginPresenter = LoginViewPresenter(api: LoginApi(apiClient: FakeApiClient()))
 
@@ -35,13 +37,14 @@ class LoginValidatingStatusTests: XCTestCase {
 		}).disposed(by: bag)
 
 		// Assert
-		loginPresenter.validate("", and: "").subscribe(onNext: { result in
-			XCTAssertEqual([false, true], actualResultsStates)
-			exp.fulfill()
-		}).disposed(by: bag)
+		loginPresenter.validate("", and: "")
+			.subscribe(onNext: { result in
+				XCTAssertEqual(expectedStates, actualResultsStates)
+				exp.fulfill()
+			}).disposed(by: bag)
 
 		// Blocking
-		waitForExpectations(timeout: 10) { (error) in
+		waitForExpectations(timeout: 0.5) { error in
 			if let e = error {
 				XCTFail(e.localizedDescription)
 			}

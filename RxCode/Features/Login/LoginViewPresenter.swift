@@ -49,10 +49,8 @@ class LoginViewPresenter {
 		return Observable.create { observer -> Disposable in
 			self.loginApi
 				.validate(userName, and: password)
-				.do() { [weak self] in
+				.subscribe(onNext: { [weak self] result in
 					self?.validatingStatus.onNext(false)
-			    }
-				.subscribe(onNext: { result in
 					observer.onNext(result)
 					observer.onCompleted()
 				})
