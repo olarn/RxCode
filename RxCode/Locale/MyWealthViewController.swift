@@ -10,7 +10,7 @@ import UIKit
 import Localize_Swift
 import RxSwift
 
-///
+/// ```
 /// UIViewController super class for all MyWealth app
 /// to handle language toggle.
 ///

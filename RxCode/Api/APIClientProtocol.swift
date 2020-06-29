@@ -34,7 +34,7 @@ enum ApiClientException: Error {
 
 /// ```
 /// This protocol intend to wrapped API client library
-/// like Alamofire or Moya tomake change cheap
+/// like Alamofire or Moya to make change cheap
 /// in the future if needed.
 protocol ApiClientProtocol {
 	func request(_ request: ApiRequest) throws -> Observable<Data>

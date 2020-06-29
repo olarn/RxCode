@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (5.2.1)
   - Localize-Swift (3.1.0)
-  - RxAlamofire (5.3.2):
-    - RxAlamofire/Core (= 5.3.2)
-  - RxAlamofire/Core (5.3.2):
+  - RxAlamofire (5.5.0):
+    - RxAlamofire/Core (= 5.5.0)
+  - RxAlamofire/Core (5.5.0):
     - Alamofire (~> 5.1)
     - RxSwift (~> 5.1)
   - RxBlocking (5.1.1):
@@ -42,7 +42,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
-  RxAlamofire: 9234f30d94bfae9889c2aaba36358312083a7ad3
+  RxAlamofire: 22287c710761466d0123504c566a8381520d4d63
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -52,4 +52,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 40a5d070f7f726a985225ed49e477c4de1138695
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1
