@@ -58,6 +58,7 @@
 		3743E603249B6F00006E5AAD /* RxCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3743E605249B6F00006E5AAD /* RxCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCodeUITests.swift; sourceTree = "<group>"; };
 		3743E607249B6F00006E5AAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		374A0E9A24AD77FF0061825D /* Some.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Some.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3755D4DE24A9CB8A00EA374D /* Zip.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Zip.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		379A23E8248E154B00A8ECFA /* RxCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379A23EB248E154B00A8ECFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		37C9C63A2490940E00ECBA48 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				374A0E9A24AD77FF0061825D /* Some.playground */,
 				3755D4DE24A9CB8A00EA374D /* Zip.playground */,
 				3743E5FB2499E222006E5AAD /* SubString.playground */,
 				37F668972490DC4500A1C4DF /* RxAlamo+Coder.playground */,
