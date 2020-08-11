@@ -53,18 +53,21 @@ class LoginViewController: MyWealthViewController {
 	// MARK: - bindingUItoRx.inputs
 
     private func bindingUI(to presenter: LoginViewPresenter) {
-        loginTextField
-            .rx
-            .text
-            .orEmpty
+        loginTextField.rx.text.orEmpty
+            .throttle(.milliseconds(400), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
             .bind(to: presenter.inputLogin)
             .disposed(by: bag)
 
-        passwordTextField
-            .rx
-            .text
-            .orEmpty
+        passwordTextField.rx.text.orEmpty
+            .throttle(.milliseconds(400), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
             .bind(to: presenter.inputPassword)
+            .disposed(by: bag)
+        
+        presenter
+            .outputLoginFormetted
+            .bind(to: loginTextField.rx.text)
             .disposed(by: bag)
     }
 

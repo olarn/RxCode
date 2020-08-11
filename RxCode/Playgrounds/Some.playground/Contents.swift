@@ -35,8 +35,8 @@ func getCircle() -> some Shape {
     return Circle(color: 127)
 }
 
-let s = getSquare()
-print(s.describe())
+let squ = getSquare()
+print(squ.describe())
 
-let c = getCircle()
-print(c.describe())
+let cir = getCircle()
+print(cir.describe())

@@ -25,16 +25,17 @@ let bag = DisposeBag()
 //}).disposed(by: bag)
 //
 
-func returnObservable(intNumber: Int) -> Observable<String> {
-	return BehaviorSubject<Int>(value: intNumber)
-		.filter({ input -> Bool in
-			return input % 2 == 0
-		})
-		.map({ value -> String in
-			return String(value)
-		})
-}
-
-returnObservable(i: 2).subscribe(onNext: { (value) in
-	print(value)
-})
+//func returnObservable(intNumber: Int) -> Observable<String> {
+//	return BehaviorSubject<Int>(value: intNumber)
+//		.filter({ input -> Bool in
+//			return input % 2 == 0
+//		})
+//		.map({ value -> String in
+//			return String(value)
+//		})
+//}
+//
+//returnObservable(intNumber: 2).subscribe(onNext: { (value) in
+//	print(value)
+//})
+//

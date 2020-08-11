@@ -16,7 +16,9 @@ class LoginViewPresenter {
 
 	let inputLogin = BehaviorSubject<String>(value: "")
 	let inputPassword = BehaviorSubject<String>(value: "")
+    
 	let outputCanDoLogin: Observable<Bool>!
+    let outputLoginFormetted = BehaviorSubject<String>(value: "")
 
 	private let validatingStatus = BehaviorSubject<Bool>(value: false)
 	var outputIsValidating: Observable<Bool> {
@@ -33,6 +35,10 @@ class LoginViewPresenter {
 		let passwordValidation = inputPassword.map { value -> Bool in
 			return value.count >= 4
 		}
+        
+        inputLogin
+            .bind(to: outputLoginFormetted)
+            .disposed(by: bag)
 
 		outputCanDoLogin = Observable
 			.combineLatest(

@@ -18,7 +18,7 @@ enum ApiClientError: Error {
 class ApiClient: ApiClientProtocol {
 
 	let bag = DisposeBag()
-
+    
 	func request(_ request: ApiRequest) throws -> Observable<Data> {
 
 		if (request.method == .post || request.method == .put) &&
